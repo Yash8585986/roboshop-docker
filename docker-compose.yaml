@@ -1,32 +1,28 @@
 services:
   catalaouge:
-    build:
-      dockerfile: catalaouge.Dockerfile
+    build: ./catalaouge
     image: yash8575/catalaouge:1.0.0
     container_name: catalaouge
     depends_on:
       - mongodb
   user:
-    build:
-      dockerfile: user.Dockerfile
+    build: ./user
     image: yash8575/user:1.0.0
     container_name: user
     depends_on:
       - redis
-  cart:
-    build:
-      dockerfile: cart.Dockerfile
-    image: yash8575/cart:1.0.0
-    container_name: cart
-    depends_on:
-      - redis
-      - catalaouge
+  # cart:
+  #   build: ./cart
+  #   image: yash8575/cart:1.0.0
+  #   container_name: cart
+  #   depends_on:
+  #     - redis
+  #     - catalaouge
   redis:
     image: redis:7.0.5
     container_name: redis
   frontend:
-    build:
-      dockerfile: frontend.Dockerfile
+    build: ./frontend
     image: yash8575/frontend:1.0.0
     container_name: frontend
     ports:
@@ -37,8 +33,7 @@ services:
       - cart    
   
   mongodb:
-    build: 
-      dockerfile: mongodb.Dockerfile
+    build: ./mongodb
     image: yash8575/mongodb:1.0.0  
     container_name: mongodb
   
