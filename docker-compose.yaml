@@ -30,7 +30,7 @@ services:
     image: yash8575/frontend:1.0.0
     container_name: frontend
     depends_on:
-      - catalouge
+      - catalaouge
       - user
       - cart
   
