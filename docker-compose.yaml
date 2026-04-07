@@ -24,7 +24,17 @@ services:
   redis:
     image: redis:7.0.5
     container_name: redis
-  
+  frontend:
+    build:
+      dockerfile: frontend.Dockerfile
+    image: yash8575/frontend:1.0.0
+    container_name: frontend
+    depends_on:
+      - catalouge
+      - user
+      - cart
+       
+
   mongodb:
     build: 
       dockerfile: mongodb.Dockerfile
