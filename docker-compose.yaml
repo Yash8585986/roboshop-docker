@@ -29,10 +29,12 @@ services:
       dockerfile: frontend.Dockerfile
     image: yash8575/frontend:1.0.0
     container_name: frontend
+    ports:
+      - "80:80"
     depends_on:
       - catalaouge
       - user
-      - cart
+      - cart    
   
   mongodb:
     build: 
