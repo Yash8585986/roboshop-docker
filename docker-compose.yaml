@@ -6,6 +6,25 @@ services:
     container_name: catalogue
     depends_on:
       - mongodb
+  user:
+    build:
+      dockerfile: user.Dockerfile
+    image: yash8575/user:1.0.0
+    container_name: user
+    depends_on:
+      - redis
+  cart:
+    build:
+      dockerfile: cart.Dockerfile
+    image: yash8575/cart:1.0.0
+    container_name: cart
+    depends_on:
+      - redis
+      - catalogue
+  redis:
+    image: redis:7.0.5
+    container_name: redis
+  
   mongodb:
     build: 
       dockerfile: mongodb.Dockerfile
