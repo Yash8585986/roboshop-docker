@@ -1,9 +1,9 @@
 services:
-  catalogue:
+  catalaouge:
     build:
-      dockerfile: catalogue.Dockerfile
-    image: yash8575/catalogue:1.0.0
-    container_name: catalogue
+      dockerfile: catalaouge.Dockerfile
+    image: yash8575/catalaouge:1.0.0
+    container_name: catalaouge
     depends_on:
       - mongodb
   user:
@@ -20,7 +20,7 @@ services:
     container_name: cart
     depends_on:
       - redis
-      - catalogue
+      - catalaouge
   redis:
     image: redis:7.0.5
     container_name: redis
@@ -33,8 +33,7 @@ services:
       - catalouge
       - user
       - cart
-       
-
+  
   mongodb:
     build: 
       dockerfile: mongodb.Dockerfile
