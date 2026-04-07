@@ -30,7 +30,7 @@ services:
     depends_on:
       - catalaouge
       - user
-      - cart    
+      # - cart    
   
   mongodb:
     build: ./mongodb
