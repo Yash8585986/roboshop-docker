@@ -1,7 +1,7 @@
 services:
   catalogue:
     build:
-      dockerfile: catlaouge.Dockerfile
+      dockerfile: catalogue.Dockerfile
     image: yash8575/catalogue:1.0.0
     container_name: catalogue
     depends_on:
