@@ -1,0 +1,21 @@
+services:
+  catalogue:
+    build:
+      dockerfile: catlaouge.Dockerfile
+    image: yash8575/catalogue:1.0.0
+    container_name: catalogue
+    depends_on:
+      - mongodb
+  mongodb:
+    build: 
+      dockerfile: mongodb.Dockerfile
+    image: yash8575/mongodb:1.0.0  
+    container_name: mongodb
+  
+
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+    external: false
+      
