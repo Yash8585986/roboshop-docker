@@ -16,7 +16,7 @@ services:
     image: yash8575/mysql:1.0.0
     container_name: mysql
     
-  Shipping:
+  shipping:
     build: ./shipping
     image: yash8575/shipping:1.0.0
     container_name: shipping
@@ -41,7 +41,8 @@ services:
     depends_on:
       - catalogue
       - user
-      - cart   
+      - cart  
+      - shipping 
       
   
   mongodb:
