@@ -11,6 +11,12 @@ services:
     container_name: user
     depends_on:
       - redis
+  mysql:
+    build: ./mysql
+    image: yash8575/mysql:1.0.0
+    container_name: mysql
+    depends_on:
+
   cart:
     build: ./cart
     image: yash8575/cart:1.0.0
