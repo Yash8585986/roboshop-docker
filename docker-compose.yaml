@@ -1,8 +1,8 @@
 services:
-  catalaouge:
-    build: ./catalaouge
-    image: yash8575/catalaouge:1.0.0
-    container_name: catalaouge
+  catalogue:
+    build: ./catalogue
+    image: yash8575/catalogue:1.0.0
+    container_name: catalogue
     depends_on:
       - mongodb
   user:
@@ -17,7 +17,7 @@ services:
   #   container_name: cart
   #   depends_on:
   #     - redis
-  #     - catalaouge
+  #     - catalogue
   redis:
     image: redis:7.0.5
     container_name: redis
@@ -28,7 +28,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - catalaouge
+      - catalogue
       - user
       # - cart    
   
