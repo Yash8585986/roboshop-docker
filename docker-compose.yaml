@@ -11,7 +11,7 @@ services:
     container_name: user
     depends_on:
       - redis
-      - momgodb
+      - mongodb
   mysql:
     build: ./mysql
     image: yash8575/mysql:1.0.0
