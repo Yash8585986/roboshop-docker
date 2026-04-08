@@ -15,7 +15,7 @@ services:
     build: ./mysql
     image: yash8575/mysql:1.0.0
     container_name: mysql
-    depends_on:
+    
 
   cart:
     build: ./cart
