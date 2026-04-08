@@ -11,13 +11,13 @@ services:
     container_name: user
     depends_on:
       - redis
-  # cart:
-  #   build: ./cart
-  #   image: yash8575/cart:1.0.0
-  #   container_name: cart
-  #   depends_on:
-  #     - redis
-  #     - catalogue
+  cart:
+    build: ./cart
+    image: yash8575/cart:1.0.0
+    container_name: cart
+    depends_on:
+      - redis
+      - catalogue
   redis:
     image: redis:7.0.5
     container_name: redis
@@ -30,7 +30,7 @@ services:
     depends_on:
       - catalogue
       - user
-      # - cart    
+      - cart    
   
   mongodb:
     build: ./mongodb
