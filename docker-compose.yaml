@@ -16,6 +16,8 @@ services:
     build: ./mysql
     image: yash8575/mysql:1.0.0
     container_name: mysql
+    volumes:
+      - mysql:/var/lib/mysql
     
   shipping:
     build: ./shipping
@@ -34,6 +36,8 @@ services:
   redis:
     image: redis:7.0.5
     container_name: redis
+    volumes:
+      - redis:/data
   frontend:
     build: ./frontend
     image: yash8575/frontend:1.0.0
@@ -52,6 +56,8 @@ services:
       RABBITMQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
     container_name: rabbitmq
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
   payment:
     build: ./payment
     image: yash8575/payment:1.0.0
@@ -73,6 +79,8 @@ services:
     build: ./mongodb
     image: yash8575/mongodb:1.0.0  
     container_name: mongodb
+    volumes:
+      - mongodb:/data/db
   
 
 networks:
@@ -80,4 +88,9 @@ networks:
     driver: bridge
     name: roboshop
     external: false
-      
+
+volumes:
+  mongodb:
+  mysql:
+  reddis:
+  rabbitmq:
