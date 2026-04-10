@@ -92,5 +92,5 @@ networks:
 volumes:
   mongodb:
   mysql:
-  reddis:
+  redis:
   rabbitmq:
