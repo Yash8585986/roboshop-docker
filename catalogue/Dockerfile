@@ -17,7 +17,7 @@
 # CMD ["server.js"]
 # ENTRYPOINT ["node"]
 
-FROM node:20
+FROM node:20.20.2-alpine3.23
 # this creates /app and move there
 WORKDIR /app
 COPY package.json .
