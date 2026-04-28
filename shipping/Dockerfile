@@ -1,4 +1,4 @@
-FROM maven:3.9.14 as builder
+FROM maven:3.9.14 AS builder
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
@@ -12,7 +12,7 @@ COPY --from=builder /app/shipping.jar .
 
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop && \
     chown -R roboshop:roboshop /app
-    
+
 USER roboshop
 
 ENTRYPOINT ["java", "-jar", "shipping.jar"] 
